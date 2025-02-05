@@ -154,6 +154,7 @@ To remove all resources created by this project, use:
 ```sh
 terraform destroy -auto-approve
 ```
+![VPC Creation](Images/9.png)
 
 ## Conclusion
 This Terraform script sets up a VPC with a public and private subnet, internet connectivity, and route table associations. You can use this setup as a foundation for deploying cloud-based applications.
