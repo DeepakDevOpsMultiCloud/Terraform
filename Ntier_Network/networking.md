@@ -40,7 +40,7 @@ terraform init
 ```
 This command initializes the Terraform working directory by downloading necessary provider plugins.
 
-![VPC Creation](Images/1.png)
+  ![VPC Creation](Images/1.png)
 
 ### 2. Create the VPC
 ```hcl
@@ -54,6 +54,7 @@ resource "aws_vpc" "ntier" {
 **Expected Outcome:** A new VPC with CIDR block `10.0.0.0/16` is created.
 
 ![VPC Creation](Images/2.png)
+![VPC Creation](Images/3.png)
 
 ### 3. Create Public and Private Subnets
 ```hcl
@@ -75,7 +76,7 @@ resource "aws_subnet" "private_sn" {
 ```
 **Expected Outcome:** Two subnets are created within the VPC.
 
-![VPC Creation](Images/3.png)
+![VPC Creation](Images/4.png)
 
 
 
@@ -90,7 +91,7 @@ resource "aws_internet_gateway" "my_igw" {
 ```
 **Expected Outcome:** An Internet Gateway is created and associated with the VPC.
 
-![VPC Creation](Images/4.png)
+![VPC Creation](Images/5.png)
 
 ### 5. Create Public and Private Route Tables
 ```hcl
@@ -110,7 +111,9 @@ resource "aws_route_table" "private_rt" {
 ```
 **Expected Outcome:** Two route tables are created: one for public and one for private subnet traffic.
 
-![VPC Creation](Images/5.png)
+- the route table which we see is defaultly created route table
+
+![VPC Creation](Images/6.png)
 
 ### 6. Associate Route Tables with Subnets
 ```hcl
@@ -126,7 +129,7 @@ resource "aws_route_table_association" "private_association" {
 ```
 **Expected Outcome:** The subnets are associated with their respective route tables.
 
-![VPC Creation](Images/6.png)
+![VPC Creation](Images/7.png)
 
 ### 7. Configure Routing for Internet Access
 ```hcl
@@ -138,7 +141,7 @@ resource "aws_route" "igw_associate" {
 ```
 **Expected Outcome:** The public route table is configured to send traffic to the internet via the Internet Gateway.
 
-![VPC Creation](Images/7.png)
+![VPC Creation](Images/8.png)
 
 ### 8. Apply the Terraform Configuration
 ```sh
