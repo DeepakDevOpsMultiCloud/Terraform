@@ -1,1 +1,1 @@
-![](./Modules/Project/Images/Terraform.png)
+![](./Installation/Images/Terraform.png)
